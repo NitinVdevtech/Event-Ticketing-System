@@ -1,0 +1,6 @@
+<% @user_events.each do |ticket| %>
+  <div>
+    <h2><%= link_to ticket.event.name, ticket.event %></h2>
+    <p><strong>Quantity:</strong> <%= ticket.quantity %></p>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %> |
+<%= link_to "Destroy", event_path(@event), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item"><h1><%= @event.name.capitalize %></h1></li>
+  <li class="list-group-item"><strong>Location:</strong><%= @event.location %></li>
+  <li class="list-group-item"><strong>Date:</strong><%= @event.date_time %></li>
+  <li class="list-group-item"><strong>Total Tickets:</strong> <%= @event.total_tickets %></li>
+  <li class="list-group-item"><strong>Available Tickets:</strong> <%= @event.available_tickets %></li>
+</ul>
+
+<div class="my-3">
+  <%= form_with url: event_tickets_path(@event), method: :post do |f|%>
+      <h3>Book Ticket</h3>
+      <%= f.label :ticket_quantity, class: "form-label" %>
+      <%= f.number_field :quantity, class: "form-control mb-2" %>
+      <%= f.submit "Book Ticket", class: "btn btn-dark"%>
+  <% end %>
+</div>

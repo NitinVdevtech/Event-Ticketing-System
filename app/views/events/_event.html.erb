@@ -1,0 +1,16 @@
+<tr>
+    <td><%=event.name %></td>
+    <td><%=event.description %></td>
+    <td><%=event.location %></td>
+    <td><%=event.total_tickets %></td>
+    <td><%=event.available_tickets %></td>
+    <td><%=event.date_time %></td>
+    <td><%= link_to :see_event, event_path(event) %></td>
+    <% if event.user.eql? current_user%>
+        <td><%= event.quantity %></td>
+        <td><%= "MY EVENT"  %></td>
+    <% else %>
+        <td> - </td>
+        <td> - </td>
+    <%end %>
+</tr>

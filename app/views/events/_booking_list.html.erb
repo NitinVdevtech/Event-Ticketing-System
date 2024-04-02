@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>location</th>
+          <th>Booked Ticket</th>
+          <th>Date time</th>
+      </tr>
+  </thead>
+  <tbody>
+      <% my_booked_events.each do |event| %>
+          <tr>
+              <td><%=event.name %></td>
+              <td><%=event.description %></td>
+              <td><%=event.location %></td>
+              <td><%= event.total_quantity %></td>
+              <td><%=event.date_time %></td>
+          </tr>
+      <% end %>
+  </tbody>
+</table>
