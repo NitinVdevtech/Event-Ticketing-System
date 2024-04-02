@@ -29,7 +29,7 @@
 
   1. Clone the repository:
 
-  git clone https://github.com/your_username/repo_name.git
+  git clone https://github.com/NitinVdevtech/Event-Ticketing-System
 
   2. `cd project_name`
 
